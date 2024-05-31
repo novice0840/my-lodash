@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+branch_name=$(git symbolic-ref --short HEAD)
+if [ "$branch_name" = "main" ]; then
+  echo "You can't commit directly to the main branch."
+  exit 1
+fi
