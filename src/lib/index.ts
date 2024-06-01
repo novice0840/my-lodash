@@ -1,1 +1,2 @@
-export { default as add } from "./add";
+export * from "./math";
+export * from "./lang";

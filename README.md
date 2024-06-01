@@ -5,7 +5,10 @@
 ## husky setting
 
 - pre-commit.sh : main 브랜츠에 직접 commit 불가
-- validate-commit.sh : commit 메세지는 feat fix docs style refactor test chore 중 하나여야 한다.
+- commit-msg.sh : commit 메세지는 commitlint의 규칙을 따른다.<br>
+  type(scope?): subject의 형태 <br>
+  type에는 build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test가 가능함 <br>
+  subject에는 대문자를 사용할 수 없다.
 
 ## features
 
@@ -18,6 +21,63 @@
 ### Function
 
 ### Lang
+
+- [ ] castArray
+- [ ] clone
+- [ ] cloneDeep
+- [ ] cloneDeepWith
+- [ ] cloneWith
+- [ ] conformsTo
+- [ ] eq
+- [ ] gt
+- [ ] gte
+- [ ] isArguments
+- [ ] isArray
+- [ ] isArrayBuffer
+- [ ] isArrayLike
+- [ ] isArrayLikeObject
+- [ ] isBoolean
+- [ ] isBuffer
+- [ ] isDate
+- [ ] isElement
+- [ ] isEmpty
+- [ ] isEqual
+- [ ] isEqualWith
+- [ ] isError
+- [ ] isFinite
+- [ ] isFunction
+- [ ] isInteger
+- [ ] isLength
+- [ ] isMap
+- [ ] isMatch
+- [ ] isMatchWith
+- [ ] isNaN
+- [ ] isNative
+- [ ] isNil
+- [ ] isNull
+- [ ] isNumber
+- [ ] isObject
+- [ ] isObjectLike
+- [ ] isPlainObject
+- [ ] isRegExp
+- [ ] isSafeInteger
+- [ ] isSet
+- [ ] isString
+- [x] isSymbol
+- [ ] isTypedArray
+- [ ] isUndefined
+- [ ] isWeakMap
+- [ ] isWeakSet
+- [ ] lt
+- [ ] lte
+- [ ] toArray
+- [ ] toFinite
+- [ ] toInteger
+- [ ] toLength
+- [ ] toNumber
+- [ ] toPlainObject
+- [ ] toSafeInteger
+- [ ] toString
 
 ### Math
 

@@ -5,6 +5,6 @@ import { describe, test, expect } from "vitest";
 
 describe("sample test", () => {
   test("it", () => {
-    expect(add(1, 2)).toBe(3);
+    expect(myAdd(1, 2)).toBe(3);
   });
 });
