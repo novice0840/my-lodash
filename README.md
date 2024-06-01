@@ -81,7 +81,7 @@
 
 ### Math
 
-- [ ] add
+- [x] add
 - [ ] ceil
 - [ ] divide
 - [ ] floor
