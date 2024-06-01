@@ -84,7 +84,7 @@
 - [x] add
 - [ ] ceil
 - [ ] divide
-- [ ] floor
+- [x] floor
 - [ ] max
 - [ ] maxBy
 - [ ] mean

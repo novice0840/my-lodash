@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 import { add, divide } from "lodash";
-import { add as myAdd } from "../lib";
+import { add as myAdd, divide as myDivide } from "../lib";
 
 describe("math 메소드", () => {
   test("add", () => {
@@ -11,8 +11,23 @@ describe("math 메소드", () => {
       [-10, 10],
     ];
 
-    testParams.forEach((testParam) => {
-      expect(myAdd(testParam[0], testParam[1])).toBe(add(testParam[0], testParam[1]));
+    testParams.forEach(([augend, addend]) => {
+      expect(myAdd(augend, addend)).toBe(add(augend, addend));
+    });
+  });
+
+  test("divide", () => {
+    const testParams = [
+      [1, 2],
+      [0, 1],
+      [1, 0],
+      [-10, 1],
+      [1, -9991],
+      [1234, 5678],
+    ];
+
+    testParams.forEach(([dividend, divisor]) => {
+      expect(myDivide(dividend, divisor)).toBe(divide(dividend, divisor));
     });
   });
 });
