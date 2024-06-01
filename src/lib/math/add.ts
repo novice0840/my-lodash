@@ -1,3 +1,5 @@
+import createMathOperation from "../internal/createMathOperation";
+
 /**
  * 두 숫자를 더한다.
  *
@@ -11,8 +13,6 @@
  * add(6, 4)
  * // => 10
  */
-const add = (augend: number, addend: number) => {
-  return augend + addend;
-};
+const add = createMathOperation((augend: number, addend: number) => augend + addend, 0);
 
 export default add;

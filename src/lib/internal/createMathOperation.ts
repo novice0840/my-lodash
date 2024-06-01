@@ -1,3 +1,6 @@
+import baseToNumber from "./baseToNumber";
+import baseToString from "./baseToString";
+
 /**
  * 두 값에 수학적 연산을 수행하는 함수를 만든다.
  *
@@ -19,11 +22,11 @@ const createMathOperation = (operator: Function, defaultValue: number) => {
     }
 
     if (typeof value === "string" || typeof other === "string") {
-      value = String(value);
-      other = String(other);
+      value = baseToString(value);
+      other = baseToString(other);
     } else {
-      value = Number(value);
-      other = Number(other);
+      value = baseToNumber(value);
+      other = baseToNumber(other);
     }
 
     return operator(value, other);
