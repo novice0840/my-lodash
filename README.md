@@ -83,17 +83,17 @@
 
 - [x] add
 - [ ] ceil
-- [ ] divide
-- [x] floor
+- [x] divide
+- [ ] floor
 - [ ] max
 - [ ] maxBy
 - [ ] mean
 - [ ] meanBy
 - [ ] min
 - [ ] minBy
-- [ ] multiply
+- [x] multiply
 - [ ] round
-- [ ] subtract
+- [x] subtract
 - [ ] sum
 - [ ] sumBy
 

@@ -1,33 +1,43 @@
 import { describe, test, expect } from "vitest";
-import { add, divide } from "lodash";
-import { add as myAdd, divide as myDivide } from "../lib";
+import { add, divide, multiply, subtract } from "lodash";
+import {
+  add as myAdd,
+  divide as myDivide,
+  multiply as myMultiply,
+  subtract as mySubtract,
+} from "../lib";
 
 describe("math 메소드", () => {
-  test("add", () => {
-    const testParams = [
-      [1, 2],
-      [100, 1],
-      [1, 100],
-      [-10, 10],
-    ];
+  const mathOperationTests = [
+    [1, 2],
+    [100, 1],
+    [1, 100],
+    [-10, 10],
+    [1, 0],
+    [0, 1],
+  ];
 
-    testParams.forEach(([augend, addend]) => {
+  test("add", () => {
+    mathOperationTests.forEach(([augend, addend]) => {
       expect(myAdd(augend, addend)).toBe(add(augend, addend));
     });
   });
 
   test("divide", () => {
-    const testParams = [
-      [1, 2],
-      [0, 1],
-      [1, 0],
-      [-10, 1],
-      [1, -9991],
-      [1234, 5678],
-    ];
-
-    testParams.forEach(([dividend, divisor]) => {
+    mathOperationTests.forEach(([dividend, divisor]) => {
       expect(myDivide(dividend, divisor)).toBe(divide(dividend, divisor));
+    });
+  });
+
+  test("multiply", () => {
+    mathOperationTests.forEach(([multiplier, multiplicand]) => {
+      expect(myMultiply(multiplier, multiplicand)).toBe(multiply(multiplier, multiplicand));
+    });
+  });
+
+  test("subtract", () => {
+    mathOperationTests.forEach(([minuend, subtrahend]) => {
+      expect(mySubtract(minuend, subtrahend)).toBe(subtract(minuend, subtrahend));
     });
   });
 });
