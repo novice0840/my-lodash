@@ -1,10 +1,11 @@
 import { describe, test, expect } from "vitest";
-import { add, divide, multiply, subtract } from "lodash";
+import { add, divide, multiply, subtract, ceil, floor, round } from "lodash";
 import {
   add as myAdd,
   divide as myDivide,
   multiply as myMultiply,
   subtract as mySubtract,
+  ceil as myCeil,
 } from "../lib";
 
 describe("math 메소드", () => {
@@ -15,6 +16,13 @@ describe("math 메소드", () => {
     [-10, 10],
     [1, 0],
     [0, 1],
+  ];
+
+  const roundTests: [number, number?][] = [
+    [4.006, undefined],
+    [6.004, 2],
+    [6040, -2],
+    [123456789.123456789, 5],
   ];
 
   test("add", () => {
@@ -38,6 +46,13 @@ describe("math 메소드", () => {
   test("subtract", () => {
     mathOperationTests.forEach(([minuend, subtrahend]) => {
       expect(mySubtract(minuend, subtrahend)).toBe(subtract(minuend, subtrahend));
+    });
+  });
+
+  test.only("ceil", () => {
+    roundTests.forEach(([n, precision]) => {
+      console.log(ceil(n, precision));
+      expect(myCeil(n, precision)).toBe(ceil(n, precision));
     });
   });
 });
