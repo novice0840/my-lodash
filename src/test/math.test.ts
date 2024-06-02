@@ -6,6 +6,8 @@ import {
   multiply as myMultiply,
   subtract as mySubtract,
   ceil as myCeil,
+  floor as myFloor,
+  round as myRound,
 } from "../lib";
 
 describe("math 메소드", () => {
@@ -49,10 +51,22 @@ describe("math 메소드", () => {
     });
   });
 
-  test.only("ceil", () => {
+  test("ceil", () => {
     roundTests.forEach(([n, precision]) => {
       console.log(ceil(n, precision));
       expect(myCeil(n, precision)).toBe(ceil(n, precision));
+    });
+  });
+
+  test("floor", () => {
+    roundTests.forEach(([n, precision]) => {
+      expect(myFloor(n, precision)).toBe(floor(n, precision));
+    });
+  });
+
+  test("round", () => {
+    roundTests.forEach(([n, precision]) => {
+      expect(myRound(n, precision)).toBe(round(n, precision));
     });
   });
 });

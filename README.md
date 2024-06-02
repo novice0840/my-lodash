@@ -82,9 +82,9 @@
 ### Math
 
 - [x] add
-- [ ] ceil
+- [x] ceil
 - [x] divide
-- [ ] floor
+- [x] floor
 - [ ] max
 - [ ] maxBy
 - [ ] mean
@@ -92,7 +92,7 @@
 - [ ] min
 - [ ] minBy
 - [x] multiply
-- [ ] round
+- [x] round
 - [x] subtract
 - [ ] sum
 - [ ] sumBy
