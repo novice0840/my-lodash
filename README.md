@@ -1,6 +1,6 @@
-# my-lodash
+# @my/utils
 
-내가 직접 만들어 보는 lodash 라이브러리
+내가 직접 만들어 보는 @toss/utils 라이브러리
 
 ## husky setting
 
@@ -12,101 +12,77 @@
 
 ## features
 
-### Array
-
-### Collection
-
-### Date
-
-### Function
-
-### Lang
-
-- [ ] castArray
-- [ ] clone
-- [ ] cloneDeep
-- [ ] cloneDeepWith
-- [ ] cloneWith
-- [ ] conformsTo
-- [ ] eq
-- [ ] gt
-- [ ] gte
-- [ ] isArguments
-- [ ] isArray
-- [ ] isArrayBuffer
-- [ ] isArrayLike
-- [ ] isArrayLikeObject
-- [ ] isBoolean
-- [ ] isBuffer
-- [ ] isDate
-- [ ] isElement
-- [ ] isEmpty
-- [ ] isEqual
-- [ ] isEqualWith
-- [ ] isError
-- [ ] isFinite
-- [ ] isFunction
-- [ ] isInteger
-- [ ] isLength
-- [ ] isMap
-- [ ] isMatch
-- [ ] isMatchWith
-- [ ] isNaN
-- [ ] isNative
+- [ ] Masker
+- [ ] ceilToUnit
+- [ ] commaizeNumber
+- [ ] decommaizeNumber
+- [ ] floorAndFormatNumber
+- [ ] floorToUnit
+- [ ] formatBusinessRegistrationNumber
+- [ ] formatPhoneNumber
+- [ ] formatToKRW
+- [ ] formatToKoreanNumber
+- [ ] roundToUnit
+- [ ] NonEmptyArray
+- [ ] arrayIncludes
+- [ ] isDifferentArray
+- [ ] isNonEmptyArray
+- [ ] last
+- [ ] batchRequestsOf
+- [ ] chunk
+- [ ] clamp
+- [ ] clipboard
+- [ ] copyToClipboard
+- [ ] createMapByKey
+- [ ] delay
+- [ ] getOSByUserAgent
+- [ ] isAndroid
+- [ ] isClient
+- [ ] isIE
+- [ ] isIOS
+- [ ] isMacOS
+- [ ] isMobileWeb
+- [ ] isServer
+- [ ] difference
+- [ ] differenceWith
+- [ ] escapeHTML
+- [ ] generateID
+- [ ] get
+- [ ] set
+- [ ] set
+- [ ] getScrollDiffFromButton
+- [ ] getScrollPercent
+- [ ] getViewportSize
+- [ ] groupBy
+- [ ] hexToRgba
+- [ ] isAlphaValue
+- [ ] isRGBDecimalValue
+- [ ] identity
 - [ ] isNil
-- [ ] isNull
-- [ ] isNumber
-- [ ] isObject
-- [ ] isObjectLike
-- [ ] isPlainObject
-- [ ] isRegExp
-- [ ] isSafeInteger
-- [ ] isSet
-- [ ] isString
-- [x] isSymbol
-- [ ] isTypedArray
-- [ ] isUndefined
-- [ ] isWeakMap
-- [ ] isWeakSet
-- [ ] lt
-- [ ] lte
-- [ ] toArray
-- [ ] toFinite
-- [ ] toInteger
-- [ ] toLength
-- [ ] toNumber
-- [ ] toPlainObject
-- [ ] toSafeInteger
-- [ ] toString
-
-### Math
-
-- [x] add
-- [x] ceil
-- [x] divide
-- [x] floor
-- [ ] max
+- [ ] isNotNil
+- [ ] loadScript
+- [ ] mapValues
+- [ ] maskName
 - [ ] maxBy
-- [ ] mean
-- [ ] meanBy
-- [ ] min
 - [ ] minBy
-- [x] multiply
-- [x] round
-- [x] subtract
+- [ ] asyncNoop
+- [ ] noop
+- [ ] objectEntries
+- [ ] objectKeys
+- [ ] objectValues
+- [ ] omit
+- [ ] pick
+- [ ] parseName
+- [ ] partition
+- [ ] queryString
+- [ ] range
+- [ ] retryRequestsOf
+- [ ] safeScrollTo
+- [ ] scrollRestoration.set
+- [ ] setFocusTimeout
+- [ ] shuffle
 - [ ] sum
-- [ ] sumBy
-
-### Number
-
-### Object
-
-### Seq
-
-### String
-
-### Util
-
-### Properties
-
-### Methods
+- [ ] uniq
+- [ ] uniqBy
+- [ ] uniqWith
+- [ ] zip
