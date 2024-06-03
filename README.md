@@ -12,7 +12,7 @@
 
 ## features
 
-- [ ] Masker
+- [x] Masker
 - [ ] ceilToUnit
 - [ ] commaizeNumber
 - [ ] decommaizeNumber
