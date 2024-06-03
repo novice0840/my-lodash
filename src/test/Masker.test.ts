@@ -1,4 +1,3 @@
-// import { Masker } from "@toss/utils";
 import { Masker } from "../lib";
 import { describe, test, expect } from "vitest";
 
