@@ -27,7 +27,7 @@
 - [x] formatToKRW
 - [x] formatToKoreanNumber
 - [x] roundToUnit
-- [ ] NonEmptyArray
+- [x] NonEmptyArray
 - [ ] arrayIncludes
 - [ ] isDifferentArray
 - [ ] isNonEmptyArray
