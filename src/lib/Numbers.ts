@@ -1,0 +1,161 @@
+const units = [
+  "",
+  "십",
+  "백",
+  "천",
+  "만",
+  "십",
+  "백",
+  "천",
+  "억",
+  "십",
+  "백",
+  "천",
+  "조",
+  "십",
+  "백",
+  "천",
+  "경",
+];
+
+const chunk = (value: number | string, byDigits: number) => {
+  const result: number[] = [];
+  const source = String(value);
+
+  for (let end = source.length; end >= 1; end -= byDigits) {
+    const start = Math.max(end - byDigits, 0);
+    const slice = source.slice(start, end);
+
+    result.push(Number(slice));
+  }
+
+  return result;
+};
+
+const createNumberFormatterBy = (formatter: (num: number) => number) => {
+  return (value: number, unit: number) => {
+    if (unit < 1) {
+      const reciprocal = 1 / unit;
+
+      return formatter(value * reciprocal) / reciprocal;
+    }
+
+    return formatter(value / unit) * unit;
+  };
+};
+
+export const ceilToUnit = createNumberFormatterBy(Math.ceil);
+export const floorToUnit = createNumberFormatterBy(Math.floor);
+export const roundToUnit = createNumberFormatterBy(Math.round);
+
+export const formatToKoreanNumber = (
+  value: number,
+  options: {
+    floorUnit?: number;
+    ceilUnit?: number;
+    formatAllDigits?: boolean;
+  } = {}
+) => {
+  const unit =
+    options.floorUnit !== undefined
+      ? floorToUnit(value, options.floorUnit || 1)
+      : ceilToUnit(value, options.ceilUnit || 1);
+
+  if (unit === 0) {
+    return "0";
+  }
+
+  return chunk(unit, 4)
+    .reduce((prevFormatted, currChunkNumber, index) => {
+      if (currChunkNumber === 0) {
+        return prevFormatted;
+      }
+
+      const val = options.formatAllDigits
+        ? formatThousands(currChunkNumber)
+        : commaizeNumber(currChunkNumber);
+      const unit = units[index * 4];
+
+      return `${val}${unit} ${prevFormatted}`;
+    }, "")
+    .trim();
+};
+
+export const formatToKRW = (
+  value: number,
+  options: {
+    shouldHaveSpaceBeforeWon?: boolean;
+    floorUnit?: number;
+    ceilUnit?: number;
+    formatAllDigits?: boolean;
+  } = {}
+) => {
+  const formattedVal = formatToKoreanNumber(value, options);
+
+  if (options.shouldHaveSpaceBeforeWon === true) {
+    return `${formattedVal} 원`;
+  }
+
+  return `${formattedVal}원`;
+};
+
+export const commaizeNumber = (value: string | number) => {
+  const numStr = String(value);
+  const decimalPointIndex = numStr.indexOf(".");
+  const commaizeRegExp = /(\d)(?=(\d\d\d)+(?!\d))/g;
+
+  return decimalPointIndex > -1
+    ? numStr.slice(0, decimalPointIndex).replace(commaizeRegExp, "$1,") +
+        numStr.slice(decimalPointIndex)
+    : numStr.replace(commaizeRegExp, "$1,");
+};
+
+export const floorAndFormatNumber = (value: number) => {
+  return commaizeNumber(Math.floor(value));
+};
+
+export const decommaizeNumber = (numStr: string) => {
+  return Number(numStr.replace(/,/g, ""));
+};
+
+export const formatPhoneNumber = (phoneNumber: string) => {
+  const isSeoulNumber = phoneNumber.startsWith("02");
+  const is12Number = phoneNumber.length === 12;
+
+  const areaCodeEndIndex = isSeoulNumber ? 2 : is12Number ? 4 : 3;
+
+  return [
+    phoneNumber.slice(0, areaCodeEndIndex),
+    phoneNumber.slice(areaCodeEndIndex, phoneNumber.length - 4),
+    phoneNumber.slice(phoneNumber.length - 4),
+  ].join("-");
+};
+
+const formatThousands = (num: number) => {
+  const numString = String(num)
+    .split("")
+    .reverse()
+    .map((digit, index) => {
+      return digit !== "0"
+        ? `${digit !== "1" ? digit : ""}${units[index]}`
+        : "";
+    })
+    .reverse()
+    .join("");
+
+  return numString;
+};
+
+export const formatBusinessRegistrationNumber = (
+  businessRegistraionNumber: string
+) => {
+  if (businessRegistraionNumber.length !== 10) {
+    throw new Error("사업자등록번호는 반드시 길이가 10 이어야 합니다.");
+  }
+
+  if (/^\d+$/.test(businessRegistraionNumber) === false) {
+    throw new Error("사업자등록번호는 [0-9] 이어야 합니다.");
+  }
+
+  return businessRegistraionNumber.replace(/(\d{3})(\d{2})(\d{5})/, "$1-$2-$3");
+};

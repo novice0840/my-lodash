@@ -1,3 +1,5 @@
+import { describe, it, expect } from "vitest";
+
 import {
   ceilToUnit,
   commaizeNumber,
@@ -9,7 +11,7 @@ import {
   formatToKoreanNumber,
   formatToKRW,
   roundToUnit,
-} from ".";
+} from "../lib";
 
 describe("Numbers", () => {
   it('should round down "value" by "unit"', () => {

@@ -10,19 +10,23 @@
   type에는 build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test가 가능함 <br>
   subject에는 대문자를 사용할 수 없다.
 
+# To do list
+
+- [ ] utils -> Number -> formatToKoreanNumber README options에 ceilUnit 없는 것 고치고 테스트 코드에 예제 추가
+
 ## features
 
 - [x] Masker
-- [ ] ceilToUnit
-- [ ] commaizeNumber
-- [ ] decommaizeNumber
-- [ ] floorAndFormatNumber
-- [ ] floorToUnit
-- [ ] formatBusinessRegistrationNumber
-- [ ] formatPhoneNumber
-- [ ] formatToKRW
-- [ ] formatToKoreanNumber
-- [ ] roundToUnit
+- [x] ceilToUnit
+- [x] commaizeNumber
+- [x] decommaizeNumber
+- [x] floorAndFormatNumber
+- [x] floorToUnit
+- [x] formatBusinessRegistrationNumber
+- [x] formatPhoneNumber
+- [x] formatToKRW
+- [x] formatToKoreanNumber
+- [x] roundToUnit
 - [ ] NonEmptyArray
 - [ ] arrayIncludes
 - [ ] isDifferentArray
